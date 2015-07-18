@@ -57,7 +57,7 @@ namespace createsamplenotepad
                 var filename = sfd.FileName;
                 System.IO.StreamWriter sw = new System.IO.StreamWriter(filename);
                 sw.WriteLine(txtNotepad.Text);
-                sw.Close(); // close the file
+                sw.Close();
             }
         }
 
