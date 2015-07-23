@@ -35,7 +35,7 @@ namespace createsamplenotepad
             var ofd = new OpenFileDialog();
             ofd.Filter = "Text Documents (*.txt) |*.txt|All Files (*.*) |*.*";
 
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 var fileName = ofd.FileName;
                 file_name = Path.GetDirectoryName(fileName) + "\\" + ofd.SafeFileName;
@@ -61,9 +61,7 @@ namespace createsamplenotepad
             else
             {
                 Text = Path.GetFileName(file_name);
-                StreamWriter sw2 = new StreamWriter(file_name);
-                sw2.WriteLine(txtNotepad.Text);
-                sw2.Close(); // comment
+                streamWriter(file_name);
             }
         }
 
@@ -178,10 +176,15 @@ namespace createsamplenotepad
             if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var filename = sfd.FileName;
-                StreamWriter sw = new StreamWriter(filename);
-                sw.WriteLine(txtNotepad.Text);
-                sw.Close();
+                streamWriter(filename);
             }
+        }
+
+        private void streamWriter(string fileName)
+        {
+            StreamWriter sw = new StreamWriter(fileName);
+            sw.WriteLine(txtNotepad.Text);
+            sw.Close();
         }
 
         private void txtNotepad_TextChanged(object sender, EventArgs e)
@@ -204,24 +207,5 @@ namespace createsamplenotepad
 
         }
 
-       
-
- 
-
-  
-
-
-  
-
-       
-
-          
-
-     
-
-    }
-
-     
-
-    
+    }   
 }
