@@ -161,8 +161,6 @@ namespace createsamplenotepad
             var selectionIndex = txtNotepad.SelectionStart;
             txtNotepad.Text = txtNotepad.Text.Insert(selectionIndex, DateTime.Now.ToString());
             txtNotepad.SelectionStart = selectionIndex + lenDateTime;
-
-           
         }   
 
         private void mnuWordWrap_Click(object sender, EventArgs e)
