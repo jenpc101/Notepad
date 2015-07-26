@@ -181,7 +181,11 @@ namespace createsamplenotepad
 
         private void mnuEdit_Click(object sender, EventArgs e)
         {
-            mnuCopy.Enabled = mnuDelete.Enabled = mnuCut.Enabled = (txtNotepad.SelectedText != "");
+            //mnuCopy.Enabled = mnuDelete.Enabled = mnuCut.Enabled = (txtNotepad.SelectedText != "");
+            var b = txtNotepad.SelectedText != "";
+            mnuCopy.Enabled = b;
+            mnuDelete.Enabled = b;
+            mnuCut.Enabled = b;
         }
 
 
