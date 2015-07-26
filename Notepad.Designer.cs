@@ -72,11 +72,11 @@
             // txtNotepad
             // 
             this.txtNotepad.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.txtNotepad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNotepad.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtNotepad.Location = new System.Drawing.Point(0, 24);
             this.txtNotepad.Multiline = true;
             this.txtNotepad.Name = "txtNotepad";
-            this.txtNotepad.Size = new System.Drawing.Size(597, 404);
+            this.txtNotepad.Size = new System.Drawing.Size(597, 379);
             this.txtNotepad.TabIndex = 0;
             this.txtNotepad.WordWrap = false;
             this.txtNotepad.TextChanged += new System.EventHandler(this.txtNotepad_TextChanged);
@@ -115,7 +115,7 @@
             // 
             this.mnuNew.Name = "mnuNew";
             this.mnuNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.mnuNew.Size = new System.Drawing.Size(152, 22);
+            this.mnuNew.Size = new System.Drawing.Size(146, 22);
             this.mnuNew.Text = "New";
             this.mnuNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
@@ -123,7 +123,7 @@
             // 
             this.mnuOpen.Name = "mnuOpen";
             this.mnuOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.mnuOpen.Size = new System.Drawing.Size(152, 22);
+            this.mnuOpen.Size = new System.Drawing.Size(146, 22);
             this.mnuOpen.Text = "Open";
             this.mnuOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
@@ -131,26 +131,26 @@
             // 
             this.mnuSave.Name = "mnuSave";
             this.mnuSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.mnuSave.Size = new System.Drawing.Size(152, 22);
+            this.mnuSave.Size = new System.Drawing.Size(146, 22);
             this.mnuSave.Text = "Save";
             this.mnuSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
             // mnuSaveAs
             // 
             this.mnuSaveAs.Name = "mnuSaveAs";
-            this.mnuSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.mnuSaveAs.Size = new System.Drawing.Size(146, 22);
             this.mnuSaveAs.Text = "Save As";
             this.mnuSaveAs.Click += new System.EventHandler(this.mnuFileSaveAs_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
             // 
             // mnuPageSetUp
             // 
             this.mnuPageSetUp.Name = "mnuPageSetUp";
-            this.mnuPageSetUp.Size = new System.Drawing.Size(152, 22);
+            this.mnuPageSetUp.Size = new System.Drawing.Size(146, 22);
             this.mnuPageSetUp.Text = "Page Setup";
             this.mnuPageSetUp.Click += new System.EventHandler(this.mnuFilePageSetUp_Click);
             // 
@@ -158,19 +158,19 @@
             // 
             this.mnuPrint.Name = "mnuPrint";
             this.mnuPrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.mnuPrint.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrint.Size = new System.Drawing.Size(146, 22);
             this.mnuPrint.Text = "Print";
             this.mnuPrint.Click += new System.EventHandler(this.mnuFilePrint_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(143, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuExit.Size = new System.Drawing.Size(146, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -272,8 +272,6 @@
             // 
             this.mnuEditGoTo.Name = "mnuEditGoTo";
             this.mnuEditGoTo.Size = new System.Drawing.Size(164, 22);
-            this.mnuEditGoTo.Text = "Go To..";
-            this.mnuEditGoTo.Click += new System.EventHandler(this.mnuEditGoTo_Click);
             // 
             // mnuSelectAll
             // 
@@ -303,14 +301,14 @@
             // 
             this.mnuWordWrap.CheckOnClick = true;
             this.mnuWordWrap.Name = "mnuWordWrap";
-            this.mnuWordWrap.Size = new System.Drawing.Size(152, 22);
+            this.mnuWordWrap.Size = new System.Drawing.Size(134, 22);
             this.mnuWordWrap.Text = "Word Wrap";
             this.mnuWordWrap.Click += new System.EventHandler(this.mnuWordWrap_Click);
             // 
             // mnuFont
             // 
             this.mnuFont.Name = "mnuFont";
-            this.mnuFont.Size = new System.Drawing.Size(152, 22);
+            this.mnuFont.Size = new System.Drawing.Size(134, 22);
             this.mnuFont.Text = "Font";
             this.mnuFont.Click += new System.EventHandler(this.mnuFormatFont_Click);
             // 
@@ -326,7 +324,7 @@
             // 
             this.mnuViewStatusBar.CheckOnClick = true;
             this.mnuViewStatusBar.Name = "mnuViewStatusBar";
-            this.mnuViewStatusBar.Size = new System.Drawing.Size(152, 22);
+            this.mnuViewStatusBar.Size = new System.Drawing.Size(126, 22);
             this.mnuViewStatusBar.Text = "Status Bar";
             this.mnuViewStatusBar.Click += new System.EventHandler(this.mnuViewStatusBar_Click);
             // 

@@ -17,11 +17,13 @@ namespace createsamplenotepad
     public partial class frmNotepad : Form
     {
         string file_name = "";
+        int lineNumber = 0;
         public frmNotepad()
         {
             InitializeComponent();
           
         }
+
 
         private void mnuFileNew_Click(object sender, EventArgs e)
         {
@@ -37,10 +39,9 @@ namespace createsamplenotepad
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                var fileName = ofd.FileName;
-                file_name = Path.GetDirectoryName(fileName) + "\\" + ofd.SafeFileName;
-                Text = Path.GetFileName(fileName);
-                StreamReader sr = new StreamReader(fileName);
+                file_name = ofd.FileName; 
+                Text = Path.GetFileName(file_name);
+                StreamReader sr = new StreamReader(file_name);
                 txtNotepad.Text = sr.ReadToEnd();
                 sr.Close();
             }
@@ -70,14 +71,47 @@ namespace createsamplenotepad
           
            
         }
-
+        
         private void mnuFilePrint_Click(object sender, EventArgs e)
         {
-            var pdf = new PrintDialog();
-            if (pdf.ShowDialog() == DialogResult.OK)
-            {
+            Font printFont = new Font("Arial", 12);
+            StreamReader Printfile = new StreamReader(file_name);
+            
+                try
+                {
+                    PrintDocument docToPrint = new PrintDocument();
+                    docToPrint.DocumentName = "Password"; 
+                    docToPrint.PrintPage += (s, ev) =>
+                    {
+                        float linesPerPage = 0;
+                        float yPos = 0;
+                        int count = 0;
+                        float leftMargin = ev.MarginBounds.Left;
+                        float topMargin = ev.MarginBounds.Top;
+                        string line = null;
 
-            }
+                        linesPerPage = ev.MarginBounds.Height / printFont.GetHeight(ev.Graphics);
+
+                        while (count < linesPerPage && ((line = Printfile.ReadLine()) != null))
+                        {
+                            yPos = topMargin + (count * printFont.GetHeight(ev.Graphics));
+                            ev.Graphics.DrawString(line, printFont, Brushes.Black, leftMargin, yPos, new StringFormat());
+                            count++;
+                        }
+
+                        if (line != null)
+                            ev.HasMorePages = true;
+                        else
+                            ev.HasMorePages = false;
+                    };
+                    docToPrint.Print();
+                }
+                catch (System.Exception f)
+                {
+                    MessageBox.Show(f.Message);
+                }
+
+            
         }
 
         private void mnuFileExit_Click(object sender, EventArgs e)
@@ -92,8 +126,11 @@ namespace createsamplenotepad
             {
                 if (MessageBox.Show("Do you want to save change to unname file?", "Exit", MessageBoxButtons.YesNoCancel) == DialogResult.Yes)
                 {
+                    saveFile();
                     Application.Exit();
                 }
+                
+               
             }
                         
         }
@@ -143,7 +180,9 @@ namespace createsamplenotepad
 
         private void mnuEdit_Click(object sender, EventArgs e)
         {
-            var test = (txtNotepad.SelectedText != "") ? mnuCopy.Enabled = mnuCut.Enabled = mnuDelete.Enabled = true : mnuCopy.Enabled = mnuCut.Enabled = mnuDelete.Enabled = false;
+            mnuDelete.Enabled = (txtNotepad.SelectedText != "");
+            mnuCut.Enabled = (txtNotepad.SelectedText != "");
+            mnuCopy.Enabled = (txtNotepad.SelectedText != "");
         }
 
 
@@ -206,9 +245,11 @@ namespace createsamplenotepad
            
         }
 
-        private void mnuEditGoTo_Click(object sender, EventArgs e)
-        {
+    
 
+        private void rtbNotepad_TextChanged(object sender, EventArgs e)
+        {
+            
         }
 
     }   
