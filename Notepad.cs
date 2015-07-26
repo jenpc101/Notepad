@@ -17,7 +17,7 @@ namespace createsamplenotepad
     public partial class frmNotepad : Form
     {
         string file_name = "";
-        int lineNumber = 0;
+
         public frmNotepad()
         {
             InitializeComponent();
@@ -243,13 +243,6 @@ namespace createsamplenotepad
         {
             
            
-        }
-
-    
-
-        private void rtbNotepad_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
     }   
