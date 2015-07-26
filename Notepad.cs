@@ -130,6 +130,14 @@ namespace createsamplenotepad
                     saveFile();
                     Application.Exit();
                 }
+                else if (dr == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+                else if (dr == DialogResult.Cancel)
+                {
+                    return;
+                }
                 
                
             }
