@@ -180,9 +180,7 @@ namespace createsamplenotepad
 
         private void mnuEdit_Click(object sender, EventArgs e)
         {
-            mnuDelete.Enabled = (txtNotepad.SelectedText != "");
-            mnuCut.Enabled = (txtNotepad.SelectedText != "");
-            mnuCopy.Enabled = (txtNotepad.SelectedText != "");
+            mnuCopy.Enabled = mnuDelete.Enabled = mnuCut.Enabled = (txtNotepad.SelectedText != "");
         }
 
 
