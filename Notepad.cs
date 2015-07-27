@@ -124,7 +124,7 @@ namespace createsamplenotepad
 
             else
             {
-                 DialogResult dr = MessageBox.Show("Do you want to save change to unname file?", "Exit", MessageBoxButtons.YesNoCancel ,MessageBoxIcon.Question);
+                 DialogResult dr = MessageBox.Show("Do you want to save change to unname file?", "Exit", MessageBoxButtons.YesNoCancel ,MessageBoxIcon.Question); 
                 if (dr == DialogResult.Yes)
                 {
                     saveFile();
