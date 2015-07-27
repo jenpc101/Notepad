@@ -253,8 +253,7 @@ namespace createsamplenotepad
 
         private void mnuViewStatusBar_Click(object sender, EventArgs e)
         {
-            
-           
+            ssStatusStrip.Visible = mnuViewStatusBar.Checked;  
         }
 
     }   
